@@ -59,7 +59,9 @@ public class Desafio {
 		matrix.get(0).add("UF: ");
 		matrix.get(0).add("Fumante: ");
 
+		
 		do {
+			try {
 			System.out.println(menu);
 			choice = Integer.valueOf(entrada.next());
 
@@ -70,6 +72,7 @@ public class Desafio {
 
 				System.out.println("CADASTRO DE CLIENTE: \n" + "Código do cliente: " + costmNumb);
 				matrix.add(new ArrayList<String>());
+				//Entrada 0
 				matrix.get(costmNumb).add(Integer.toString(costmNumb));
 				System.out.println("Nome: ");
 				matrix.get(costmNumb).add(entrada.next());
@@ -98,7 +101,7 @@ public class Desafio {
 				System.out.println("Fumante? ");
 				matrix.get(costmNumb).add(entrada.next());
 
-				while (!matrix.get(costmNumb).get(7).equals("S") && !matrix.get(costmNumb).get(6).equals("N")) {
+				while (!matrix.get(costmNumb).get(7).equals("S") && !matrix.get(costmNumb).get(7).equals("N")) {
 					System.out.println("Responda somente com S ou N.");
 					matrix.get(costmNumb).set(7, entrada.next());
 				}
@@ -124,11 +127,11 @@ public class Desafio {
 
 						String costmCode = entrada.next();
 
-						do {
+						if(Integer.valueOf(costmCode) < 1 || Integer.valueOf(costmCode) > Integer.valueOf(costmNumb)) {
 							System.out.println("Código de cliente não existe!");
-
-						} while (Integer.valueOf(costmCode) < 1
-								|| Integer.valueOf(costmCode) > Integer.valueOf(costmNumb));
+							break;
+						}
+						
 
 						int costmIndex = 0;
 
@@ -137,7 +140,6 @@ public class Desafio {
 								costmIndex = i;
 							}
 						}
-						System.out.println(costmIndex);
 
 						System.out.println("Você gostaria de editar/excluir o cliente: " + matrix.get(costmIndex).get(1)
 								+ "? \n \n" + "1 - Sim \n" + "2 - Não");
@@ -169,12 +171,10 @@ public class Desafio {
 
 									int ans2 = Integer.valueOf(entrada.next());
 
-									do {
+									if(ans2 > 7 || ans2 < 1) {
 										System.out.println("Opção Inválida! \n" + "Escolha entre as opções de 1 a 7.");
-
 										ans2 = Integer.valueOf(entrada.next());
-
-									} while (ans2 > 7 || ans2 < 1);
+									} 
 
 									System.out.println("Digite a nova informação: ");
 									matrix.get(costmIndex).set(ans2, entrada.next());
@@ -383,8 +383,9 @@ public class Desafio {
 				System.out.println("Opção Inválida! \n");
 				break;
 			}
-//			System.out.println(matrix);
-
+		}catch(IndexOutOfBoundsException e) {
+			System.out.println("Esta opção não existe.\n");
+		}
 		} while (true);
 
 	}
