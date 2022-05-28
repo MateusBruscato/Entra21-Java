@@ -3,7 +3,10 @@
  */
 package MaquinaDeLavar;
 
+import java.io.IOException;
 import java.util.Scanner;
+
+
 
 /**
  * @author guest01
@@ -16,22 +19,21 @@ public class MaquinaDeLavar {
 	 */
 	static String[] info = new String[4];
 	static int[] numbers = new int[5];
+
 	
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException {
 		Scanner entrada = new Scanner(System.in);
 		entrada.useDelimiter(System.lineSeparator());
-
+				
 		do {
-			System.out.println("================================================================ \n"
-					+ "MENU DE SIMULAÇÃO \n" + "================================================================ \n"
+			System.out.println("====================================================== \n"
+					+ "MENU DE SIMULAÇÃO \n" + "====================================================== \n"
 					+ "1 - Configurar a máquina de lavar \n" + "2 - Simular a máquina de lavar \n" + "0 - Sair \n"
 					+ "Digite o código: ");
 
 			try {
 			
 			int opt = Integer.valueOf(entrada.next());
-			
-
 			
 			switch (opt) {
 
@@ -105,34 +107,34 @@ public class MaquinaDeLavar {
 					System.out.print("\n");
 				case 2:
 					for (int i = 0; i < 5; i++) {
-						System.out.println("Estágio 2 - Lavação Normal: " + 20 * (i + 1) + "%");
 						Thread.sleep(500);
+						System.out.println("Estágio 2 - Lavação Normal: " + 20 * (i + 1) + "%");
 					}
 					System.out.print("\n");
 
 				case 3:
 					for (int i = 0; i < 5; i++) {
-						System.out.println("Estágio 3 - Lavação Leve: " + 20 * (i + 1) + "%");
 						Thread.sleep(500);
+						System.out.println("Estágio 3 - Lavação Leve: " + 20 * (i + 1) + "%");
 					}
 					System.out.print("\n");
 
 				case 4:
 					for (int i = 0; i < 5; i++) {
-						System.out.println("Estágio 4 - Enxague: " + 20 * (i + 1) + "%");
 						Thread.sleep(500);
+						System.out.println("Estágio 4 - Enxague: " + 20 * (i + 1) + "%");
 					}
 					System.out.print("\n");
 
 				case 5:
 					for (int i = 0; i < 5; i++) {
-						System.out.println("Estágio 5 - Centrifugar: " + 20 * (i + 1) + "%");
 						Thread.sleep(500);
+						System.out.println("Estágio 5 - Centrifugar: " + 20 * (i + 1) + "%");
 					}
 					System.out.print("\n");
-
+					System.out.println("Ciclo Concluído!");
 				}
-
+				break;
 			case 0:
 				System.out.println("Saiu!");
 				return;
