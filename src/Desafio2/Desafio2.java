@@ -1,7 +1,7 @@
 /**
  * 
  */
-package Desafio;
+package Desafio2;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * @author mateu
  *
  */
-public class Desafio {
+public class Desafio2 {
 
 	static Scanner entrada = new Scanner(System.in);
 
@@ -369,9 +369,6 @@ public class Desafio {
 					ans = Integer.valueOf(entrada.next());
 					//Remove o cliente e o respectivo quarto da matriz check
 					if (ans == 1) {
-						System.out.println("De quantos dias foi a estadia de " + matrix.get(costumer).get(1) + "?");
-						int nDays = Integer.valueOf(entrada.next());
-						
 						for (int i = 0; i < check.size(); i++) {
 							if (check.get(i).get(0).equals(Integer.toString(costumer))) {
 								for (int j = 0; j < quartos.size(); j++) {
@@ -379,7 +376,6 @@ public class Desafio {
 										quartos.get(j).set(6, "f");
 										checkCount--;
 										check.remove(i);
-										System.out.println("O valor a ser cobrado é de R$" + nDays * Integer.valueOf(quartos.get(j).get(3)) + ",00.");
 										System.out.println("Check-Out realizado com sucesso! \n");
 									}
 								}
