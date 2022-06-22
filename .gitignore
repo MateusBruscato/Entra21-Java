@@ -1,0 +1,20 @@
+# Ignore a pasta bin
+bin
+
+# Ignore a pasta .settings
+.settings
+
+# Ignore pasta Desafio2
+src/Desafio2
+
+# Ignore pasta Lista1
+src/Lista1
+
+# Ignore pasta Lista2
+src/Lista2
+
+#Ignore classpath
+.classpath
+
+#Ignore project
+.project
